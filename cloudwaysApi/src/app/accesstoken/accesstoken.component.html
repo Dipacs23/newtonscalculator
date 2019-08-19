@@ -1,0 +1,38 @@
+<p>
+  List of Providers
+</p>
+<ul>
+  <li *ngFor='let provider of providersModel'>
+    {{provider.id}} - {{provider.name}}
+  </li>
+</ul>
+<br />
+<br />
+<p>
+  List of Linode Servers
+</p>
+<table class="table">
+  <thead>
+    <tr role="row">
+      <th>Id</th>
+      <th>Name</th>
+      <th>BW</th>
+      <th>vCPU's</th>
+      <th>RAM</th>
+      <th>Disk</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let provider of linodePricingModel">
+      <td>{{provider.id}}</td>
+      <td>{{provider.label}}</td>
+      <td>{{provider.transfer}} GB</td>
+      <td>{{provider.vcpus}} vCPU</td>
+      <td>{{provider.memory}} GB</td>
+      <td>{{provider.disk/1024}} GB</td>
+      <td>$ {{provider.price.monthly}}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
